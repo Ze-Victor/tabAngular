@@ -3,37 +3,45 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-tab',
   template: `
-    <div class="tabButtons">
-      <app-button
-        *ngFor="let tabItem of tab; let i = index"
-        [textButton]="tabItem.textButton"
-        (onSelection)="select(i)"
-      >
-      </app-button>
-    </div>
     <div class="tabPane">
-      <h1>
-        {{ tab[currentOption].textPane }}
-      </h1>
+      <div class="tabButtons">
+        <app-button
+          *ngFor="let tabItem of tab; let i = index"
+          [textButton]="tabItem.textButton"
+          (onSelection)="select(i)"
+        >
+        </app-button>
+      </div>
+      <div class="tabEnunciation">
+        <h1>
+          {{ tab[currentOption].textPane }}
+        </h1>
+      </div>
     </div>
   `,
   styles: [
     `
       .tabButtons {
-        width: 800px;
+        width: 490px;
         display: flex;
-        justify-content: space-between;
-        padding: 30px;
+        margin: 5px;
       }
       .tabPane {
-        width: 800px;
-        height: 200px;
-        background-color: #ccc;
-        border: solid 2px #000;
-        border-radius: 8px;
         display: flex;
-        align-items: center;
-        justify-content: center;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 500px;
+        height: 300px;
+        padding: 24px;
+        gap: 8px;
+        background: #ffffff;
+        /* Shadow / 6 */
+
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.12);
+        border-radius: 4px;
+      }
+      .tabEnunciation {
+        margin-top: 30px;
       }
     `,
   ],

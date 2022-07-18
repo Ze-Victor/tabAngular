@@ -14,11 +14,13 @@ export interface Button {
   styles: [
     `
       button {
-        margin-right: 10px;
-        background-color: #ccc;
-        border: 1px solid rgb(118, 118, 118);
-        border-radius: 3px;
-        padding: 2px 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px 8px;
+        border: none;
+        background: gray;
+        margin-left: 3px;
       }
     `,
   ],
